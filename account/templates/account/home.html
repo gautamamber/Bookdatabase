@@ -1,0 +1,124 @@
+{% extends 'base.html' %}
+<h1>THis is home page</h1>
+
+{% block head %} 
+<title>
+		Home
+	</title>
+{% endblock %}
+	
+
+{% block body %}
+
+
+<br>
+<div class = "container">
+	<div class="row">
+		<div class="col-xs-12">
+
+<center><b class="royalty_author">Royalty Statement for Financial Year 2017-18</b></center><br>
+	<center><b class="royalty_author">Author: {{ user.username }}</b></center><br><br>
+	<center><b class="statement">Please note your accounts statement for sale of books as detailed below. Your royalty cheques are also enclosed with this statement. We mutually understand that there is no payment of yours outstanding after this. We further look forward to you for a long and happy association for all times to come in future.</b>></center><br>
+
+</div>
+	</div>
+</div>
+<hr>
+
+<div class = "container">
+	<div class="row">
+		<div class="col-xs-12">
+
+{% for bookdata in author_data %}
+
+
+<h4><b>Title</b></h4><br>
+ <table>
+  <tr>
+    <th>Title ID</th>
+    <th>Title Name</th>
+    <th>ISBN</th>
+    <th>Edition</th>
+    <th>Version</th>
+    <th>Rate (Rs)</th>
+   
+  <tr>
+    <td>{{bookdata.title_id}}</td>
+    <td>{{bookdata.title_name}}</td>
+    <td>{{bookdata.title_isbn}}</td>
+     <td>{{bookdata.edition}}</td>
+    <td>{{bookdata.version}}</td>
+    <td>{{bookdata.price}}</td>
+    </tr>
+</table>
+<br>
+<h4><b>Royalty Details</b></h4>
+<br>
+<table>
+  <tr>
+
+    <th>Opening Balance</th>
+    <th>Copies Printed</th>
+    <th>Total Copies</th>
+    <th>Defective Copies</th>
+    <th>No. of specimen copies issued</th>
+    <th>Copies Sold</th>
+    <!-- <th>Balance Stock</th> -->
+    <th>Domestic Sales</th>
+    <th>International Sales</th>
+    <th>Closing Stock</th>
+    <th>Royalty Rate (%)</th>
+    <th>Royalty Amount (Rs)</th>
+  <tr>
+    <td>{{bookdata.opening_balance}}</td>
+    <td>{{bookdata.copies_printed}}</td>
+    <td>{{bookdata.total_copies}}</td>
+     <td>{{bookdata.defective_copies}}</td>
+    <td>{{bookdata.no_of_specimen_copies_issued}}</td>
+    <td>{{bookdata.total_sales}}</td>
+    <td>{{bookdata.domestic_sales}}</td>
+     <td>{{bookdata.international_sales}}</td>
+    <td>{{bookdata.closing_stock}}</td>
+    <td>{{bookdata.royalty_rate}}</td>
+     <td>{{bookdata.royalty_amount}}</td>
+   
+    </tr>
+</table>
+<br><h4><b>Net Amount Payable Details (in Rs.)</b></h4><br>
+<table>
+  <tr>
+  <th>Total Royalty</th>
+    <th>Advances</th>
+    <th>TDS</th>
+    <th>Net amount payable</th>
+    <tr>
+    <td>{{bookdata.total_royalty}}</td>
+    <td>{{bookdata.advances}}</td>
+    <td>{{bookdata.tds}}</td>
+     <td>{{bookdata.net_amount_payable}}</td>
+    </tr>
+</table>
+<br><h4><b>Payment Details</b></h4><br>
+<table>
+  <tr>
+<th>Payment Details</th>
+    <tr>
+    <td>{{bookdata.payment_details}}</td>
+    </tr>
+</table>
+<br><br>
+<hr>
+{% endfor %}
+
+</div>
+	</div>
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+

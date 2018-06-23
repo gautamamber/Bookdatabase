@@ -1,0 +1,110 @@
+ <!DOCTYPE html>
+<html>
+<head>
+<title>KHANNA BOOK PUBLISHING COMPANY PRIVATE LIMITED</title>
+    <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+</head>
+<style>
+
+
+  .headline{
+    font-size: 30px;
+
+  }
+
+  table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    background-color: #dddddd;
+}
+
+
+.royalty_author{
+  font-size: 25px;
+}
+.statement{
+  font-size: 15px;
+}
+
+</style>
+<body>
+
+<div class="container-fluid">
+<div class="row">
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+     
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+    {% if user.is_authenticated %}
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="/account">Home</a></li>
+        <li><a href="/account/profile">Profile</a></li>
+        
+        <li><a href="/account/profile/edit/">Edit Profile</a></li>
+        <!-- <li><a href="#">Personal Details</a></li> -->
+        <li><a href="/account/change_password">Reset Password</a></li>
+        <li><a href="/account/logout/">Logout</a></li>
+      </ul>
+      {% else %}
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="/account/register/"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="/account/login/"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+      {% endif %}
+    </div>
+  </div>
+</nav>
+</div>
+</div>
+  
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4 col-xs-12">
+    <div class="headline">
+      {% load static %}
+    <center><img src="{% static "account/khanna.jpg" %}" alt="My image" width="200px" height="200px;" style="margin-left: 30px; margin-top: 20px;" /></center>
+    </div>
+    </div>
+    <div class="col-sm-6 col-xs-12">
+    <div style="margin-top: 20px;" class="headline">
+      <center><b>KHANNA BOOK PUBLISHING COMPANY PRIVATE LIMITED</b></center>
+      <center><b>4C/4344, ANSARI ROAD, DARYAGANJ, NEW DELHI-110002</b></center>
+    </div>
+    </div>
+  </div>
+</div>
+<br>
+<br>
+{% block body %}
+{% endblock %}<br><hr> 
+
+
+
+
+
+
+
+</body>
+</html>
