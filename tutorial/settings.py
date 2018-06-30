@@ -25,9 +25,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'tgk55a6lf6#4u*!aug!xfyk(+lmjkhejpu#lw1*m6)ei7&wjny'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 # AUTHENTICATION_BACKENDS =('django.contrib.auth.backends.ModelBackend','account.authentication.EmailAuthBackend',)
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'# Application definition

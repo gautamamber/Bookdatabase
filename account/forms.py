@@ -3,7 +3,7 @@
 from django import forms
 #also use user models
 from django.contrib.auth.models import User
-# from account.models import Personal_details
+from account.models import Personal_details
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm
 
 class RegistrationForm(UserCreationForm):
@@ -42,4 +42,9 @@ class EditProfileForm(UserChangeForm):
 			'password'
 
 		}
+
+class PersonalDetails(forms.ModelForm):  
+    class Meta:  
+        model = Personal_details 
+        fields = "__all__"  
 		

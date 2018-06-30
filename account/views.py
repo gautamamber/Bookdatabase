@@ -3,14 +3,11 @@ from django.contrib.auth.forms import UserCreationForm, PasswordChangeForm
 from account.forms import RegistrationForm, EditProfileForm 
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserChangeForm
-from .models import BookData
+from .models import BookData, Personal_details
 from django.contrib.auth import update_session_auth_hash
 from django.contrib.auth.decorators import login_required
 from django.core.mail import send_mail
 from django.conf import settings
-
-
-
 
 @login_required
 def home(request):
@@ -71,4 +68,19 @@ def change_password(request):
 		return render(request, 'account/change_password.html', args)
 
 
+
+@login_required
+def personal_details_show(request):
+	
+	
+	personal_details = Personal_details.objects.filter(user=request.user)
+	return render(request, 'account/personal_details_show.html',  {'personal_details' : personal_details})
+
+def error_404(request):
+        data = {}
+        return render(request,'account/error_404.html', data)
+ 
+def error_500(request):
+        data = {}
+        return render(request,'account/error_500.html', data)
 

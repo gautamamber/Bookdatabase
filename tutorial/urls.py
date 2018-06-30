@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
+
 from django.conf.urls import url, include
 from django.contrib import admin
 from tutorial import views
@@ -29,4 +30,5 @@ urlpatterns = [
 admin.site.site_header = "KHANNA BOOK PUBLISHING COMPANY PRIVATE LIMITED"
 admin.site.site_title = "KHANNA BOOK PUBLISHING COMPANY PRIVATE LIMITED"
 admin.site.index_title = "KHANNA BOOK PUBLISHING COMPANY PRIVATE LIMITED"
+
 

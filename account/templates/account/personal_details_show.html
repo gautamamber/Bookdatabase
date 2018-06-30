@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+<h1>THis is home page</h1>
+
+{% block head %} 
+<title>
+		Home
+	</title>
+{% endblock %}
+	
+
+{% block body %}
+
+
+<br>
+<div class = "container">
+	<div class="row">
+		<div class="col-xs-12">
+
+<center><b class="royalty_author">Personal Details: {{user.username}}</b></center><br>
+	
+
+</div>
+	</div>
+</div>
+<hr>
+
+<div class = "container">
+	<div class="row">
+		<div class="col-xs-12">
+
+{% for personal_detail in personal_details %}
+
+<center>
+   <table style="width:100%">
+  <tr>
+    <th>PAN Card No.:</th>
+    <td>{{personal_detail.pan_card_no}}</td>
+  </tr>
+  <tr>
+    <th>Aadhar Card No.:</th>
+    <td>{{personal_detail.pan_card_no}}</td>
+  </tr>
+  </table>
+  <h2>Permanent Address:</h2>
+  <table>
+  <tr>
+  <th>Address:</th>
+    <td>{{personal_detail.permanent_address}}</td>
+  </tr>
+   <tr>
+    <th>City:</th>
+    <td>{{personal_detail.permanent_city}}</td>
+  </tr>
+  <tr>
+    <th>State:</th>
+    <td>{{personal_detail.permanent_state}}</td>
+  </tr>
+   <tr>
+    <th>PIN:</th>
+    <td>{{personal_detail.permanent_pin}}</td>
+  </tr>
+  <tr>
+    <th>Country:</th>
+    <td>{{personal_detail.permanent_country}}</td>
+  </tr>
+</table>
+ <h2>Postal Address:</h2>
+  <table>
+  <tr>
+  <th>Address:</th>
+    <td>{{personal_detail.postal_address}}</td>
+  </tr>
+   <tr>
+    <th>City:</th>
+    <td>{{personal_detail.postal_city}}</td>
+  </tr>
+  <tr>
+    <th>State:</th>
+    <td>{{personal_detail.postal_state}}</td>
+  </tr>
+   <tr>
+    <th>PIN:</th>
+    <td>{{personal_detail.postal_pin}}</td>
+  </tr>
+  <tr>
+    <th>Country:</th>
+    <td>{{personal_detail.postal_country}}</td>
+  </tr>
+</table>
+ <h2>Contact Details</h2>
+<table>
+  <tr>
+    <th>Mobile_1:</th>
+    <td>{{personal_detail.mobile1}}</td>
+  </tr>
+  <tr>
+    <th>Mobile_2:</th>
+    <td>{{personal_detail.mobile2}}</td>
+  </tr>
+   <tr>
+    <th>Personal Email:</th>
+    <td>{{personal_detail.personal_email}}</td>
+  </tr>
+  <tr>
+    <th>Official Email:</th>
+    <td>{{personal_detail.office_email}}</td>
+  </tr>
+</table>
+</center>
+
+
+{% endfor %}
+
+</div>
+	</div>
+</div>
+
+
+
+
+
+
+{% endblock %}
+
+

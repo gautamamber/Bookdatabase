@@ -39,40 +39,28 @@ class BookData(models.Model):
 		db_table = 'Book_Data'
 
 
-# class Personal_details(models.Model):
-# 	user = models.ForeignKey(User, on_delete=models.CASCADE)
-# 	pan_card_no = models.CharField(max_length = 20, blank =  True)
-# 	aadhar_card_no = models.CharField(max_length = 20 , blank = True)
-# 	permanent_address = models.CharField(max_length = 100, blank = True)
-# 	permanent_city = models.CharField(max_length = 20, blank = True)
-# 	permanent_state = models.CharField(max_length = 20, blank = True)
-# 	permanent_pin = models.CharField(max_length = 20, blank = True)
-# 	permanent_country = models.CharField(max_length = 20, blank = True)
-# 	postal_address = models.CharField(max_length = 100, blank = True)
-# 	postal_city = models.CharField(max_length = 20, blank = True)
-# 	postal_state = models.CharField(max_length = 20, blank = True)
-# 	postal_pin = models.CharField(max_length = 20, blank = True)
-# 	postal_country = models.CharField(max_length = 20, blank = True)
-# 	mobile1 = models.CharField(max_length = 20, blank = True)
-# 	mobile2 = models.CharField(max_length = 20, blank = True)
-# 	personal_email = models.CharField(max_length = 20, blank = True)
-# 	office_email = models.CharField(max_length = 20, blank = True)
+class Personal_details(models.Model):
+	user = models.OneToOneField(User, on_delete=models.CASCADE)
+	pan_card_no = models.CharField(max_length = 20, blank =  True)
+	aadhar_card_no = models.CharField(max_length = 20 , blank = True)
+	permanent_address = models.CharField(max_length = 100, blank = True)
+	permanent_city = models.CharField(max_length = 20, blank = True)
+	permanent_state = models.CharField(max_length = 20, blank = True)
+	permanent_pin = models.CharField(max_length = 20, blank = True)
+	permanent_country = models.CharField(max_length = 20, blank = True)
+	postal_address = models.CharField(max_length = 100, blank = True)
+	postal_city = models.CharField(max_length = 20, blank = True)
+	postal_state = models.CharField(max_length = 20, blank = True)
+	postal_pin = models.CharField(max_length = 20, blank = True)
+	postal_country = models.CharField(max_length = 20, blank = True)
+	mobile1 = models.CharField(max_length = 20, blank = True)
+	mobile2 = models.CharField(max_length = 20, blank = True)
+	personal_email = models.CharField(max_length = 20, blank = True)
+	office_email = models.CharField(max_length = 20, blank = True)
 
-# 	def __str__(self):
-# 		return self.user
-# 	def get_detail(self):
-# 		return reverse('post_edit', kwargs={'pk': self.pk})
+	def __str__(self):
+		return self.user.username	
 
-# 	class Meta: 
-# 		db_table = "personal_details"
+	class Meta: 
+		db_table = "personal_details"
 	 
-# 	def __str__(self):
-# 		return self.user.username
-
-
-
-# def create_profile(sender , **kwargs):
-# 	if kwargs['created']:
-# 		user_profile = BookData.objects.create(user = kwargs['instance'])
-
-# post_save.connect(create_profile, sender = User) #user = default django user

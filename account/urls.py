@@ -18,6 +18,7 @@ urlpatterns = [
 	#change password
 	
 	url(r'^change_password/$', views.change_password, name= 'change_password'),
+	url(r'^personal_details/$', views.personal_details_show, name= 'personal_details'),
 	
 	 url(r'^password_reset/$', password_reset, name='password_reset'),
     url(r'^password_reset/done/$', password_reset_done, name='password_reset_done'),
@@ -25,3 +26,6 @@ urlpatterns = [
        password_reset_confirm, name='password_reset_confirm'),
     url(r'^reset/done/$', password_reset_complete, name='password_reset_complete'),
     ]
+
+handler404 = views.error_404
+handler500 = views.error_500

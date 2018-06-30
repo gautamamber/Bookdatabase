@@ -41,6 +41,111 @@ tr:nth-child(even) {
   font-size: 15px;
 }
 
+input[type=text] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+} 
+input[type=password] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+} 
+
+input[type=email] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+
+  input[type=submit] {
+    width: 100%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+.buttonmy{
+   width: 20%;
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+@media only screen and (max-width: 320px)
+        {
+            
+            .text{
+                font-size: 15px;
+            }
+          
+        }
+        @media only screen and (min-width: 321px) and (max-width: 480px)
+        {
+            
+            .text{
+                font-size: 15px;
+            }
+         
+        }
+        @media only screen and (min-width: 481px) and (max-width: 600px)
+        {
+            
+            .text{
+                font-size: 17px;
+            }
+           
+        }
+        @media only screen and (min-width: 601px) and (max-width: 768px)
+        {
+           
+            .text{
+                font-size: 17px;
+            }
+           
+        }
+        @media only screen and (min-width: 769px) and (max-width: 1024px)
+        {
+            
+            .text{
+                font-size: 20px;
+            }
+          
+        @media only screen and (min-width: 1025px) and (max-width: 1200px)
+        {
+           
+            .text{
+                font-size: 20px;
+            }
+          
+        }
+        @media only screen and (min-width: 1201px)
+        {
+           
+            .text{
+                font-size:20px;
+            }
+            }
+
+
 </style>
 <body>
 
@@ -63,6 +168,7 @@ tr:nth-child(even) {
         <li><a href="/account/profile">Profile</a></li>
         
         <li><a href="/account/profile/edit/">Edit Profile</a></li>
+         <li><a href="/account/personal_details/">Personal Details</a></li>
         <!-- <li><a href="#">Personal Details</a></li> -->
         <li><a href="/account/change_password">Reset Password</a></li>
         <li><a href="/account/logout/">Logout</a></li>
@@ -89,8 +195,8 @@ tr:nth-child(even) {
     </div>
     <div class="col-sm-6 col-xs-12">
     <div style="margin-top: 20px;" class="headline">
-      <center><b>KHANNA BOOK PUBLISHING COMPANY PRIVATE LIMITED</b></center>
-      <center><b>4C/4344, ANSARI ROAD, DARYAGANJ, NEW DELHI-110002</b></center>
+      <center><b class="text">KHANNA BOOK PUBLISHING COMPANY PRIVATE LIMITED</b></center>
+      <center><b class="text">4C/4344, ANSARI ROAD, DARYAGANJ, NEW DELHI-110002</b></center>
     </div>
     </div>
   </div>
